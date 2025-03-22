@@ -1,0 +1,123 @@
+/* General Styling */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+h1,
+h5 {
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+
+/* Additional styles for the progress bar */
+.progress {
+    height: 5px; 
+    margin: 20px auto; 
+    width: 80%;
+}
+
+/* Home Section */
+#home {
+    background: url('https://images.unsplash.com/photo-1518277748204-ba05cb84d9f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2xvdWQlMjBidXJzdCUyMHByZWRpY3Rpb258ZW58MHwwfDB8fHww') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Cloudeye Text Styling */
+#home h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: navy;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Paragraph Styling */
+.paragraph-text {
+    font-size: 1.4rem;
+    font-family: 'Georgia', serif; /* Elegant serif font for the paragraph */
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #02073e; /* Soft light color for readability */
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Progress Bar Styling */
+.progress {
+    height: 5px; /* Height of the progress bar */
+    width: 80%; /* Width of the progress bar */
+    margin: 20px auto; /* Centering the progress bar */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.5); /* Light background for the progress track */
+}
+
+.progress-bar {
+    background-color: #007bff; /* Color of the progress indicator */
+    transition: width 0.5s ease; /* Smooth transition for the width */
+}
+
+/* Explore Dashboard Button Styling */
+#home a.btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px; /* Increased margin-top to push the button lower */
+}
+
+#home a.btn:hover {
+    background-color: darkblue;
+    transform: scale(1.05);
+}
+
+/* Dashboard Form Styling */
+#predictionForm .form-control {
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: 16px;
+}
+
+#predictionResult {
+    font-size: 18px;
+    color: #333;
+}
+
+#weatherData p {
+    font-size: 16px;
+}
+
+/* Contact Form Styling */
+form label {
+    font-weight: bold;
+    color: #333;
+}
+
+form .form-control {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#formMessage {
+    font-size: 1rem;
+    color: green;
+    text-align: center;
+}
+
+/* Navigation bar  */

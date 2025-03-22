@@ -1,0 +1,55 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    margin-bottom: 40px;
+}
+
+.faq-section {
+    background-color: #ffffff;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.accordion-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button.collapsed {
+    background-color: #343a40;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #000;
+    background-color: #ffc107;
+}
+
+.accordion-body {
+    font-size: 1.1rem;
+    background-color: #f9f9f9;
+}
+
+/* Adding spacing between FAQ items */
+.accordion-item {
+    margin-bottom: 20px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}

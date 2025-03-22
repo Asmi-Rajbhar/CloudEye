@@ -1,0 +1,27 @@
+body {
+  font-size: 20px;
+  /* background-size: cover; */
+  color: #fff; /* To ensure text is visible over the background */
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #02162b; /* Adjust text color for readability */
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.6); /* Add transparency to cards for better readability */
+}
+
+.card-title, .card-text {
+  color: #ffffff; /* Ensure card text is visible */
+}
+
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+
+

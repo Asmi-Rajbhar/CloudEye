@@ -1,0 +1,65 @@
+<?php
+
+// Set content type to JSON
+header("Content-Type: application/json");
+
+// Allow requests from all origins (use with caution in production)
+header("Access-Control-Allow-Origin: *");
+
+// Allow specific methods (GET, POST, OPTIONS)
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+
+// Allow specific headers (Content-Type, Authorization)
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+// Handle preflight requests (OPTIONS request)
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    exit(0);
+}
+
+// Database Connection
+$host = "localhost";
+$dbname = "cloudburst";
+$user = "postgres";
+$password = "0713";
+
+try {
+    $dsn = "pgsql:host=$host; port=5432; dbname=$dbname;";
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die(json_encode(["message" => "Database Connection Failed: " . $e->getMessage()]));
+}
+
+// Insert Data in the Database
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Decode JSON input
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    // Ensure the expected fields exist
+    if (isset($input['username'], $input['email'], $input['password'], $input['city'])) {
+        $username = $input['username'];
+        $email = $input['email'];
+        $password = $input['password'];
+        // $password = password_hash($input['password'], PASSWORD_BCRYPT); // Secure hashing
+        $city = $input['city'];
+
+        // Insert query
+        $query = 'INSERT INTO "UserData" ("Username", "EmailId", "Password", "City") VALUES (:username, :email, :password, :city)';
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':city', $city);
+
+        if ($stmt->execute()) {
+            echo json_encode(["message" => "Data inserted successfully"]);
+        } else {
+            echo json_encode(["message" => "Failed to insert data"]);
+        }
+    } else {
+        echo json_encode(["message" => "Invalid input data"]);
+    }
+}
+
+?>

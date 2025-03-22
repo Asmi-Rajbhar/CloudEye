@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Burst Prediction System - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #021427; /* Blue background for the entire body */
+            color: white; /* Default text color set to white */
+        }
+
+        .content-section {
+            background-color: #021427;
+            padding: 50px;
+        }
+
+
+        /* Map Section */
+        .map-section img {
+            width: 100%;
+            height: auto;
+            border: 5px solid white;
+        }
+
+        /* FAQ Section styles reused from previous code */
+        .faq-section {
+            padding: 50px;
+            background-color: #021427;
+        }
+
+        .faq-section h1 {
+            margin-bottom: 30px;
+        }
+
+        .accordion-button {
+            color: #021427; /* Blue text for FAQ headers */
+            background-color: white; /* White background for buttons */
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-item {
+            background-color: white;
+        }
+
+        .accordion-body {
+            color: #333; /* Darker text inside FAQ accordion items */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cloud Burst System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Past Cloud Burst</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- What is Cloud Burst Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>What is a Cloud Burst?</h2>
+            <p>Cloudbursts are extreme weather events characterized by short-duration, intense rainfall over a confined area, typically spanning 20-30 square kilometers. These events can lead to devastating flood-like situations within minutes. According to the India Meteorological Department, a rainfall event qualifies as a cloudburst when the precipitation exceeds 100 millimeters in an hour. While heavy rainfall is common during the monsoon season, not all instances meet this threshold.
+                From 1970 to December 2023, 32 cloudburst events have been recorded in India. The state of Uttarakhand is the most affected, with 11 recorded events, a consequence of its mountainous terrain and monsoon climate. Himachal Pradesh follows with 7 recorded incidents. Although cloudbursts are highly localized, their impacts can be far-reaching, often causing significant destruction in surrounding areas.
+                Cloudbursts predominantly occur in regions with significant orographic influence, such as the Himalayan states, Northeastern India, and the Western Ghats. These events result from moisture-laden air ascending mountainous areas, where it forms towering Cumulonimbus clouds. The upward movement of these clouds, combined with high relative humidity and dense cloud cover, provides the necessary conditions for cloudburst formation.</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Map of Places with Cloud Bursts</h2>
+            <img src="images/cloudburstmap.png" alt="Map showing places where cloud bursts have occurred">
+            <!-- Replace the src with the correct image file path or URL -->
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Frequently Asked Questions</h1>
+            <div class="accordion" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What is a cloud burst?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            A cloud burst is a sudden, intense rainfall event that occurs over a small geographical area in a short period of time, typically lasting for a few minutes to a few hours. During a cloud burst, a large amount of water can fall rapidly, overwhelming the area's natural drainage systems and often leading to flash floods.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How is a cloud burst predicted?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Cloud burst prediction is a complex process that requires the integration of various meteorological data and advanced technologies. The key factors that help meteorologists anticipate a potential cloud burst include humidity, wind speed, atmospheric pressure, and rainfall patterns.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more FAQ items here -->
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How early can a cloud burst be predicted?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Cloud bursts are highly localized, sudden weather events, making them difficult to predict with absolute certainty. However, with advancements in weather data collection and prediction models, it is possible to provide early warnings ranging from a few hours to a few days before a cloud burst occurs, depending on various factors. 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Can cloud bursts cause damage?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, cloud bursts can cause extensive damage due to the sudden and intense rainfall they bring in a very short period of time. The heavy downpour can lead to a range of natural disasters and have severe impacts on human lives, infrastructure, and the environment. 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Can cloud bursts be prevented?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Cloud bursts cannot be prevented because they are natural meteorological phenomena caused by the complex interaction of weather systems, topography, and atmospheric conditions. However, while it is impossible to stop them from occurring, the impact of cloud bursts on human life, property, and infrastructure can be minimized through early detection systems, improved forecasting, and timely warning mechanisms.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 to 15 -->
+                <!-- Additional FAQ items (fill with similar format) -->
+                
+                <!-- Example FAQ -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            How accurate are cloud burst predictions?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            While predictions have improved with technology, they are still challenging due to the complex nature of cloud formation and localized weather patterns.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            What regions are most prone to cloud bursts?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Cloud bursts are common in hilly and mountainous regions, such as the Himalayas in India, where geographical features and atmospheric conditions create ideal situations for cloud bursts.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            How can individuals and communities prepare for a cloud burst?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Preparing for cloud bursts involves proactive measures that encompass monitoring weather conditions, creating emergency plans, improving infrastructure, establishing evacuation protocols, and enhancing public awareness. By fostering a culture of preparedness, individuals and communities can mitigate the risks associated with cloud bursts, protecting lives and property from their devastating effects.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            How can cloud burst prediction help mitigate the impact of climate change?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Cloud burst prediction plays a critical role in mitigating the impacts of climate change, particularly as the frequency and intensity of extreme weather events are projected to rise. With climate change leading to shifts in weather patterns, including increased moisture in the atmosphere, the likelihood of sudden, intense rainfall events has escalated. Cloud burst prediction systems, leveraging advanced meteorological data and machine learning algorithms, can analyze various atmospheric conditions—such as humidity, temperature, and wind patterns—to identify potential cloud burst scenarios before they occur.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More FAQ items can be added here -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

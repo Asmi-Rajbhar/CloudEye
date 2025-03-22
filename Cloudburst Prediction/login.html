@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="bg">
+        <form id="loginForm" class="login-form">
+            <h2>Ready to Forecast?</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <br><br>
+            <p><a href="../Email/templates/signUp.html">New here? Create an account and join us!</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries()); // Convert to JSON object
+
+            try {
+                const response = await fetch('http://localhost/Cloudburst-Project/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data) // Send as JSON
+                });
+
+                const result = await response.json();
+
+                if (result.message === "Login Successful") {
+                    alert(result.message);
+                    window.location.href = "home.html"; // Redirect to home page
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

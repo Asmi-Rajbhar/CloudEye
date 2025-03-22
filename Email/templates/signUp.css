@@ -1,0 +1,65 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.bg {
+  /* Ensure the image path is correct */
+  background-image: url("../../Cloudburst Prediction/images/image.jpg"); /* Change this to the correct path if necessary */
+  background-size: cover; /* Ensures the image covers the whole background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100%; /* Ensures the div takes the full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Controls form width */
+}
+
+.signup-form h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: white;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%; /* Full width inputs */
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signup-form button {
+  padding: 10px 20px;
+  background-color: #288ea7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.signup-form button:hover {
+  background-color: #4fbbd6;
+}

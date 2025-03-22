@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #273d61;    
+    /* height: 70px; */
+    padding: 0px 80px;
+}
+
+.logo{
+    display: flex;
+}
+
+.logo img{
+    width: 80px;
+    height: 60px;
+    margin: 7px;
+}
+
+.logo div{
+    margin-top: 0px;
+    font-size: 25px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+
+.pages ul{
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+
+.pages li{
+    display: inline;
+    margin: 20px;
+}
+
+.pages li a:hover{
+
+}
+
+.information{
+    margin: 50px 90px;
+    text-align: justify;
+    font-size: 21px;
+    line-height: 35px;
+}
+
+.cloudburstImg{
+    margin: 0px 90px;
+}
+
+.cloudburstImg img{
+    width: 100%;
+}
+
+
+ /* FAQ Section styles reused from previous code */
+.faqSection {
+    margin: 0px 90px;
+}
+
+.faqHeading{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.accordion-button {
+    color: #021427;
+    /* background-color: white;  */
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-item {
+    background-color: white;
+}
+
+.accordion-body {
+    color: #333; /* Darker text inside FAQ accordion items */
+}
+
+
+    
+
+
+    
+
+       
