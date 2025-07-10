@@ -34,7 +34,8 @@
 
 ---
 
-📈 Model Details
+## 📈 Model Details
+
 Trained on: Historical cloudburst-related weather data
 
 Features Used:
@@ -44,3 +45,27 @@ Temperature, Precipitation, Wind Speed/Gusts, Cloud Cover
 Relative Humidity, Atmospheric Pressure, Elevation, etc.
 
 Output: Binary prediction — Cloudburst or No Cloudburst
+
+🛠️ Project Setup
+Open Website: Open index.html from the Cloudburst Prediction folder in your browser.
+
+Run the following in separate terminals:
+
+Terminal 1:
+
+cd RealTime
+
+python app.py
+
+Terminal 2:
+
+cd Historical
+
+python app1.py
+
+Terminal 3:
+
+cd Email
+
+python cloudburst_checker.py
+
