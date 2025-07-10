@@ -70,19 +70,30 @@ cd Email
 python cloudburst_checker.py
 
 ## 📊 Important Diagrams
+🔹Modular Diagram
 ![Modular Diagram](screenshots/ModularDiagram.png)
+🔹 Dataset Curation
 ![Dataset Curation](screenshots/DatasetCuration.png)
+🔹 Comparison Of Model Accuracy
 ![Comparison Of Model Accuracy](screenshots/ComparisonofModelAccuracy.png)
 
 
 ## 📷 Project Screenshot
+🔹Splash Screen
 ![Splash Screen](screenshots/SplashScreen.png)
+🔹SignUp Screen
 ![SignUp Screen](screenshots/SignUpPage.png)
+🔹Home Screen
 ![Home Screen](screenshots/HomePage.png)
+🔹RealTime Prediction Screen
 ![RealTime Prediction Screen](screenshots/RealTime.png)
+🔹Historical Prediction Screen
 ![Historical Prediction Screen](screenshots/Historical.png)
+🔹Evacuation Information Screen
 ![Evacuation Information Screen](screenshots/Evacuation.png)
+🔹Email
 ![Email](screenshots/Email.png)
+🔹Database
 ![Database](screenshots/Database.png)
 
 
