@@ -70,20 +70,20 @@ cd Email
 python cloudburst_checker.py
 
 ## 📊 Important Diagrams
-![Modular Diagram](screenshot/ModularDiagram.png)
-![Dataset Curation](screenshot/DatasetCuration.png)
-![Comparison Of Model Accuracy](screenshot/ComparisonofModelAccuracy.png)
+![Modular Diagram](screenshots/ModularDiagram.png)
+![Dataset Curation](screenshots/DatasetCuration.png)
+![Comparison Of Model Accuracy](screenshots/ComparisonofModelAccuracy.png)
 
 
 ## 📷 Project Screenshot
-![Splash Screen](screenshot/SplashScreen.png)
-![SignUp Screen](screenshot/SignUpPage.png)
-![Home Screen](screenshot/HomePage.png)
-![RealTime Prediction Screen](screenshot/RealTime.png)
-![Historical Prediction Screen](screenshot/Historical.png)
-![Evacuation Information Screen](screenshot/Evacuation.png)
-![Email](screenshot/Email.png)
-![Database](screenshot/Database.png)
+![Splash Screen](screenshots/SplashScreen.png)
+![SignUp Screen](screenshots/SignUpPage.png)
+![Home Screen](screenshots/HomePage.png)
+![RealTime Prediction Screen](screenshots/RealTime.png)
+![Historical Prediction Screen](screenshots/Historical.png)
+![Evacuation Information Screen](screenshots/Evacuation.png)
+![Email](screenshots/Email.png)
+![Database](screenshots/Database.png)
 
 
 
