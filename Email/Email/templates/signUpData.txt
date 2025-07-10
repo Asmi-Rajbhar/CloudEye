@@ -1,5 +1,4 @@
 <?php
-
 // Set content type to JSON
 header("Content-Type: application/json");
 
@@ -37,20 +36,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
 
     // Ensure the expected fields exist
-    if (isset($input['username'], $input['email'], $input['password'], $input['city'])) {
+    if (isset($input['username'], $input['email'], $input['password'], $input['city'], $input['address'])) {
         $username = $input['username'];
         $email = $input['email'];
         $password = $input['password'];
-        // $password = password_hash($input['password'], PASSWORD_BCRYPT); // Secure hashing
+        // $password = password_hash($input['password'], PASSWORD_BCRYPT); // Secure hashing (recommended)
         $city = $input['city'];
+        $address = $input['address'];
+        
+        // Get additional GPS data if available
+        $latitude = isset($input['latitude']) ? $input['latitude'] : null;
+        $longitude = isset($input['longitude']) ? $input['longitude'] : null;
 
-        // Insert query
-        $query = 'INSERT INTO "UserData" ("Username", "EmailId", "Password", "City") VALUES (:username, :email, :password, :city)';
+        // You'll need to modify your database table to add these columns
+        // ALTER TABLE "UserData" ADD COLUMN "Address" TEXT;
+        // ALTER TABLE "UserData" ADD COLUMN "Latitude" DECIMAL(10, 8);
+        // ALTER TABLE "UserData" ADD COLUMN "Longitude" DECIMAL(11, 8);
+
+        // Insert query with GPS coordinates and detailed address
+        $query = 'INSERT INTO "UserData" ("Username", "EmailId", "Password", "City", "Address", "Latitude", "Longitude") 
+                  VALUES (:username, :email, :password, :city, :address, :latitude, :longitude)';
+                  
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':city', $city);
+        $stmt->bindParam(':address', $address);
+        $stmt->bindParam(':latitude', $latitude);
+        $stmt->bindParam(':longitude', $longitude);
 
         if ($stmt->execute()) {
             echo json_encode(["message" => "Data inserted successfully"]);
@@ -61,5 +75,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(["message" => "Invalid input data"]);
     }
 }
-
 ?>

@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 from flask import Flask, request, jsonify
 import pandas as pd
 import joblib
@@ -8,6 +10,7 @@ from datetime import datetime, timedelta
 import pytz
 import random
 
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
@@ -16,7 +19,7 @@ model = joblib.load("realtimecloudburstmodel.joblib")
 
 # Function to fetch weather data from OpenWeather API
 def get_weather_data(city_name):
-    api_key = "f4fb60c4cf28d30ba8661272f0a35341"  # Your OpenWeather API key
+    api_key = os.getenv("OPENWEATHER_API_KEY")  # Your OpenWeather API key
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric"
     response = requests.get(url)
 

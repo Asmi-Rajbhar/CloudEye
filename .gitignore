@@ -1,0 +1,28 @@
+# Ignore all environment variable files
+**/.env
+
+# Ignore all joblib model files
+**/*.joblib
+
+# Ignore SQLite database and journal files
+**/*.db
+**/*.db-journal
+**/*.sqbpro
+
+# Ignore Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# VSCode settings
+.vscode/
+
+# Node modules (if using Node.js)
+node_modules/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore backups or test files
+test_*.py

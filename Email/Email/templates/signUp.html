@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="./signUp.css">
+</head>
+<body>
+    <div class="bg">
+        <form id="signupForm" class="signup-form">
+            <h1>Signup Form</h1>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="location-fields">
+                <label for="address">Location:</label>
+                <input type="text" id="address" name="address" readonly>
+                
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" readonly>
+                
+                <input type="hidden" id="latitude" name="latitude">
+                <input type="hidden" id="longitude" name="longitude">
+                
+                <div id="location-status">Detecting your location...</div>
+                <button type="button" id="detect-location">Detect My Location</button>
+            </div>
+
+            <button type="submit" id="submit-btn" disabled>Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const detectLocationBtn = document.getElementById('detect-location');
+            const locationStatus = document.getElementById('location-status');
+            const submitBtn = document.getElementById('submit-btn');
+            const cityInput = document.getElementById('city');
+            const latitudeInput = document.getElementById('latitude');
+            const longitudeInput = document.getElementById('longitude');
+            const addressInput = document.getElementById('address');
+            
+            // Function to get location
+            function getLocation() {
+                locationStatus.textContent = "Detecting your location...";
+                
+                if (!navigator.geolocation) {
+                    locationStatus.textContent = "Geolocation is not supported by your browser";
+                    return;
+                }
+                
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        // Success callback
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        
+                        latitudeInput.value = latitude;
+                        longitudeInput.value = longitude;
+                        
+                        // Reverse geocoding to get city name
+                        reverseGeocode(latitude, longitude);
+                    },
+                    error => {
+                        // Error callback
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                locationStatus.textContent = "Location access denied. Please allow location access.";
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                locationStatus.textContent = "Location information is unavailable.";
+                                break;
+                            case error.TIMEOUT:
+                                locationStatus.textContent = "Location request timed out.";
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                locationStatus.textContent = "An unknown error occurred.";
+                                break;
+                        }
+                    }
+                );
+            }
+            
+            // Function to reverse geocode (convert coordinates to address)
+            async function reverseGeocode(latitude, longitude) {
+                try {
+                    const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`);
+                    const data = await response.json();
+                    
+                    // Extract detailed location information
+                    const address = data.address;
+                    const detailedLocation = [
+                        address.suburb || address.neighbourhood || address.residential,
+                        address.road,
+                        address.city || address.town || address.village,
+                        address.state,
+                        address.postcode
+                    ].filter(Boolean).join(', ');
+                    
+                    // Set the detailed address
+                    addressInput.value = detailedLocation;
+                    
+                    // Set city
+                    const city = address.city || 
+                               address.town || 
+                               address.village || 
+                               address.county ||
+                               "Unknown location";
+                    
+                    cityInput.value = city;
+                    locationStatus.textContent = `Location detected! Coordinates: ${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+                    submitBtn.disabled = false;
+                } catch (error) {
+                    locationStatus.textContent = "Failed to get detailed location information.";
+                    console.error('Error:', error);
+                }
+            }
+            
+            // Detect location on button click
+            detectLocationBtn.addEventListener('click', getLocation);
+            
+            // Attempt to get location when page loads
+            getLocation();
+            
+            // Form submission
+            document.getElementById('signupForm').addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                if (!cityInput.value) {
+                    locationStatus.textContent = "Please detect your location before signing up";
+                    return;
+                }
+
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries()); // Convert to JSON object
+
+                try {
+                    const response = await fetch('http://localhost/Cloudburst-Project/signup.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data) // Send as JSON
+                    });
+
+                    const result = await response.json();
+                    alert(result.message);
+                    window.location.href = "/Cloudburst Prediction/home.html"; // Redirect to home page
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
