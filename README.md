@@ -75,7 +75,7 @@ python cloudburst_checker.py
 🔹 Dataset Curation
 ![Dataset Curation](screenshots/DatasetCuration.png)
 🔹 Comparison Of Model Accuracy
-![Comparison Of Model Accuracy](screenshots/ComparisonofModelAccuracy .png)
+![Comparison Of Model Accuracy](screenshots/ComparisonofModelAccuracy.png)
 
 
 ## 📷 Project Screenshot
