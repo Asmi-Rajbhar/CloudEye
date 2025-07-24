@@ -53,19 +53,19 @@ Output: Binary prediction — Cloudburst or No Cloudburst
 
 **Terminal 1:**
 
-cd RealTime
+cd frontend/RealTime
 
 python app.py
 
 **Terminal 2:**
 
-cd Historical
+cd frontend/Historical
 
 python app1.py
 
 **Terminal 3:**
 
-cd Email
+cd /frotnend/Email
 
 python cloudburst_checker.py
 
